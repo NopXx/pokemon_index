@@ -35,7 +35,7 @@ a:active {
 
 .c-details span {
     font-weight: 300;
-    font-size: 13px
+    font-size: 14px
 }
 
 .icon {
@@ -57,6 +57,10 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center
+}
+
+.id {
+    font-weight: 300;
 }
 
 .normal {
