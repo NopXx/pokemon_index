@@ -1,0 +1,93 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.grass {
+    background-color: #7CFC00;
+    color: #fafafa;
+}
+
+.poison {
+    background-color: #800080;
+    color: #fafafa;
+}
+
+img {
+    width: 200px;
+    object-fit: contain;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
