@@ -39,14 +39,15 @@ a:active {
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
-    background-color: #eee;
-    border-radius: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 39px
+    cursor: pointer;
+    /* font-size: 10px */
 }
 
 .badge span {
@@ -153,6 +154,11 @@ a:active {
     color: #fafafa;
 }
 
+.all {
+    background-color: rgb(153, 206, 206);
+    color: #fafafa;
+}
+
 img {
     width: 200px;
     object-fit: contain;
@@ -176,3 +182,10 @@ img {
     color: #a5aec0
 }
 
+#select_type * {
+    cursor: pointer;
+}
+
+.select {
+    border: 3px solid #616161;
+}
