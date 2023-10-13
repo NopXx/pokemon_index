@@ -189,3 +189,24 @@ img {
 .select {
     border: 3px solid #616161;
 }
+
+.banner
+{
+    background-image: url(/img/bannerV2.gif);
+    background-size: cover;
+    background-position:center ;
+}
+
+.textwrapper
+{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dropdownType
+{
+    text-align: center;
+}
+.Typedropdown
+{
+    border-radius: 6px;
+}

@@ -17,7 +17,8 @@
     
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <img src="/img/pokeball.png" alt="" class="icon">
+        <a class="navbar-brand" href="#">Pokémon Index</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,22 +32,33 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                Type
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <ul class="dropdown-menu dropdownType">
+                <li class="type normal mx-1 my-1 Typedropdown"><span>Normal</span></li>
+                <li class="type fire mx-1 my-1 Typedropdown"><span>Fire</span></li>
+                <li class="type water mx-1 my-1 Typedropdown"><span>Water</span></li>
+                <li class="type grass mx-1 my-1 Typedropdown"><span>Grass</span></li>
+                <li class="type electric mx-1 my-1 Typedropdown"><span>Electric</span></li>
+                <li class="type ice mx-1 my-1 Typedropdown"><span>Ice</span></li>
+                <li class="type fighting mx-1 my-1 Typedropdown"><span>Fighting</span></li>
+                <li class="type poison mx-1 my-1 Typedropdown"><span>Poison</span></li>
+                <li class="type ground mx-1 my-1 Typedropdown"><span>Ground</span></li>
+                <li class="type flying mx-1 my-1 Typedropdown"><span>Flying</span></li>
+                <li class="type psychic mx-1 my-1 Typedropdown"><span>Psychic</span></li>
+                <li class="type bug mx-1 my-1 Typedropdown"><span>Bug</span></li>
+                <li class="type rock mx-1 my-1 Typedropdown"><span>Rock</span></li>
+                <li class="type ghost mx-1 my-1 Typedropdown"><span>Ghost</span></li>
+                <li class="type dragon mx-1 my-1 Typedropdown"><span>Dragon</span></li>
+                <li class="type dark mx-1 my-1 Typedropdown"><span>Dark</span></li>
+                <li class="type steel mx-1 my-1 Typedropdown"><span>Steel</span></li>
+                <li class="type fairy mx-1 my-1 Typedropdown"><span>fairy</span></li>   
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
         </div>
       </div>
@@ -54,11 +66,11 @@
 
 <main>
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Album example</h1>
-            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <section class="py-5 text-center container-fluid banner">
+        <div class="row py-lg-5 ">
+        <div class="col-lg-6 col-md-8 mx-auto m-5 textwrapper">
+            <h1 class="fw-light">Pokémon Index</h1>
+            <p class="lead text-muted">Welcome to the Pokémon Index. It is a source of information about Pokemon. where you can search by name and number of pokemon And the website can also choose to search by type of Pokémon.</p>
             <p>
             <div class="form-inline my-2 my-lg-0">
               <div class="input-group mb-3">
@@ -66,11 +78,11 @@
               </div>
               <nav class="navbar " aria-label="First navbar example">
                 <div class="container-fluid justify-content-md-center">
-                  <button class="btn btn-primary my-2 mx-2" id="enter">search</button>
+                  <button class="btn btn-primary my-2 mx-2" id="enter">Search</button>
                   <div id="show-select">
 
                   </div>
-                  <a href="#" class="btn btn-secondary my-2 mx-2" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" id="btn-type">type</a>
+                  <a href="#" class="btn btn-secondary my-2 mx-2" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" id="btn-type">Type</a>
 
                   <div class="navbar-collapse collapse" id="navbarsExample01">
                     <div class="badge" id="types">
