@@ -5,6 +5,8 @@ const type_show = document.getElementById('type-show');
 const loading = document.getElementById('loading')
 const input = document.getElementById('input');
 const enter = document.getElementById('enter');
+const modal_pokemon = document.getElementById('modal-pokemon');
+const modal_input = document.getElementById('modal-input');
 
 var selected_type = ''
 var value_input = ''
@@ -17,6 +19,7 @@ const data = fetch('./pokemon_data.json')
     .catch(error => {
         console.error('Error:', error);
     });
+
 
 const capitalizeFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -46,7 +49,6 @@ const formath = (str) => {
 
 // filter pokemon type
 select_type.addEventListener('click', (e) => {
-
     if (e.target.id !== "select_type") {
         removeClass()
         const types = e.target.innerHTML.toLowerCase()
@@ -101,6 +103,46 @@ select_type.addEventListener('click', (e) => {
 enter.addEventListener('click', () => {
     if (value_input !== '') search(value_input)
     else all_data()
+})
+
+modal_input.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase()
+    modal_pokemon.innerHTML = ''
+    if (value.length > 0) {
+        setTimeout(() => {
+            data.then(data => {
+                var list = data.filter(function (pokemon) {
+                    return pokemon.name.includes(value) || pokemon.id.toString().includes(value);
+                });
+                console.log(list);
+                list.forEach((result) => {
+                    modal_pokemon.innerHTML += `
+                    <a href="detail.html?id=${result.id}">
+                    <div
+                class="d-flex justify-content-between align-items-center modal-card" style="cursor: pointer;">
+                <div class="d-flex flex-row align-items-center">
+                  <img src="${result.image}" class="modal-image" alt="">
+                  <div class="d-flex flex-column">
+                    <span>${result.name}</span>
+                    <div
+                      class="d-flex flex-row align-items-center modal-time-text">
+                      <small>${result.id}</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex flex-row">
+                ${result.types.map((type) => {
+                    return `<span class="badge ${type.name} m-1">${capitalizeFirstLetter(type.name)}</span>`
+                }
+                )}
+                </div>
+              </div>
+              </a>
+              `
+                })
+            })
+        }, modal_pokemon);
+    }
 })
 
 const search = (value) => {
@@ -200,12 +242,12 @@ input.addEventListener('input', (e) => {
     value_input = e.target.value.toLowerCase();
 })
 
-input.addEventListener('keypress' , (e) => {
+input.addEventListener('keypress', (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
         if (value_input !== '') search(value_input)
         else all_data()
-      }
+    }
 })
 
 

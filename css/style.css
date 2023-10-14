@@ -192,7 +192,7 @@ img {
 
 .banner
 {
-    background-image: url(/img/bannerV2.gif);
+    /* background-image: url(/img/bannerV2.gif); */
     background-size: cover;
     background-position:center ;
 }

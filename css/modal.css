@@ -1,0 +1,134 @@
+.modal-btn {
+    border-radius: 25px;
+}
+
+.modal-new {
+    font-size: 12px;
+}
+
+.modal-card {
+    padding: 20px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-active {
+    background: #f6f7fb !important;
+    border-color: #f6f7fb !important;
+    color: #000 !important;
+    font-size: 12px;
+}
+
+.modal-inputs {
+    position: relative;
+}
+
+.modal-form-control {
+    text-indent: 15px;
+    border: none;
+    height: 45px;
+    border-radius: 0px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #eee;
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 1px solid blue;
+}
+
+.modal-form-control:focus {
+    color: blue;
+}
+
+.modal-inputs i {
+    position: absolute;
+    top: 14px;
+    left: -4px;
+    color: #b8b9bc;
+}
+
+.modal-image {
+    width: 250%;
+    object-fit: scale-down;
+}
+
+.modal-star {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.modal-time-text {
+    font-size: 12px;
+    color: #989898;
+}
+
+.modal-dots {
+    height: 7px;
+    width: 7px;
+    background-color: #eee;
+    display: flex;
+    border-radius: 50%;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.modal-yellow {
+    color: #ffab2e;
+}
+
+.modal-content-text-1 {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffe7cc;
+    color: #ffa03a;
+    font-weight: 700;
+}
+
+
+.modal-blue {
+    color: #6ecce6;
+}
+
+
+.modal-content-text-2 {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #e2f5fa;
+    color: #6ecce6;
+    font-weight: 700;
+}
+
+
+.modal-dark-blue {
+    color: #572ce8;
+}
+
+.modal-content-text-3 {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #572ce86b;
+    color: #572ce8;
+    font-weight: 700;
+}
