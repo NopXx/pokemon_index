@@ -7,9 +7,25 @@ const input = document.getElementById('input');
 const enter = document.getElementById('enter');
 const modal_pokemon = document.getElementById('modal-pokemon');
 const modal_input = document.getElementById('modal-input');
+const style_image = localStorage.getItem('style-image');
+const save = document.getElementById('save-image')
+
 
 var selected_type = ''
 var value_input = ''
+if (style_image != null) {
+    console.log(style_image)
+    if (style_image === '1') {
+        document.getElementById('image-default').checked = true;
+    } else {
+        document.getElementById('image-pix').checked = true;
+    }
+} else {
+    localStorage.setItem('style-image', 1)
+    document.getElementById('image-default').checked = true;
+}
+
+var image_show = style_image == '1' ? 'image' : 'image_pix'
 
 const data = fetch('./pokemon_data.json')
     .then(response => response.json())
@@ -83,7 +99,7 @@ select_type.addEventListener('click', (e) => {
                           </div>
                           <div class="mt-5">
                               <div class="d-flex justify-content-center">
-                              <img src="${result.image}" alt="" id="image">
+                              <img src="${result[image_show]}" alt="" id="image">
                               </div>
                           </div>
                       </div>
@@ -121,7 +137,7 @@ modal_input.addEventListener('input', (e) => {
                     <div
                 class="d-flex justify-content-between align-items-center modal-card" style="cursor: pointer;">
                 <div class="d-flex flex-row align-items-center">
-                  <img src="${result.image}" class="modal-image" alt="">
+                  <img src="${result[image_show]}" class="modal-image" alt="">
                   <div class="d-flex flex-column">
                     <span>${result.name}</span>
                     <div
@@ -179,7 +195,7 @@ const search = (value) => {
                                     </div>
                                     <div class="mt-5">
                                         <div class="d-flex justify-content-center">
-                                        <img src="${result.image}" alt="" id="image">
+                                        <img src="${result[image_show]}" alt="" id="image">
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +236,7 @@ const search = (value) => {
                       </div>
                       <div class="mt-5">
                           <div class="d-flex justify-content-center">
-                          <img src="${result.image}" alt="" id="image">
+                          <img src="${result[image_show]}" alt="" id="image">
                           </div>
                       </div>
                   </div>
@@ -279,7 +295,7 @@ const all_data = () => {
             </div>
             <div class="mt-5">
               <div class="d-flex justify-content-center">
-                <img src="${result.image}" alt="" id="image">
+                <img src="${result[image_show]}" alt="" id="image">
               </div>
             </div>
         </div>
@@ -293,3 +309,18 @@ const all_data = () => {
 }
 // get function
 all_data()
+
+
+
+save.addEventListener('click', () => {
+    const radio = document.querySelectorAll('input[name="toggle')
+    let selectedSize;
+    for (const radioButton of radio) {
+        if (radioButton.checked) {
+            selectedSize = radioButton.value;
+            break;
+        }
+    }
+    localStorage.setItem('style-image', selectedSize)
+    location.reload();
+})

@@ -19,8 +19,9 @@
     <!-- icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
       rel='stylesheet'>
-      <!-- icon -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icon -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
@@ -69,12 +70,16 @@
               </ul>
             </li>
           </ul>
-          <div class="d-flex " role="search">
+          <div class="d-flex" role="search">
             <input class="form-control me-2" type="search"
               placeholder="Search"
               aria-label="Search"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal">
+          </div>
+          <div class="d-flex">
+            <i class='bx bx-cog' id="setting" data-bs-toggle="modal"
+              data-bs-target="#settingModal"></i>
           </div>
         </div>
       </div>
@@ -96,7 +101,7 @@
                   </div>
 
                   <div class="mt-5" id="modal-pokemon">
-                    
+
                   </div>
                 </div>
 
@@ -106,6 +111,38 @@
           </div>
         </div>
       </div>
+      <!-- Modal -->
+      <div class="modal fade" id="settingModal" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Setting Image Style</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="btn-group" id="filterDay" data-toggle="buttons">
+                <label class="btn btn-default blue">
+                  <input type="radio" class="toggle" name="toggle" value="1" id="image-default">
+                  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"lt="image-default">
+                </label>
+                <label class="btn btn-default blue">
+                  <input type="radio" class="toggle" name="toggle" value="2" id="image-pix">
+                  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="image_pix">
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="save-image">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
       <section class="py-5 text-center container-fluid banner">
         <div class="row py-lg-5 ">
           <div class="col-lg-6 col-md-8 mx-auto m-5 textwrapper">
