@@ -65,7 +65,7 @@ select_type.addEventListener('click', (e) => {
                 result.types.map((type) => {
                     if (type.name === types) {
                         pokemon.innerHTML += `
-                          <a href="detail/${result.id}"
+                          <a href="detail.html?id=${result.id}"
                           <div class="col-md-4">
                           <div class="card p-3 mb-2 shadow-sm">
                           <div class="d-flex justify-content-between">
@@ -114,7 +114,7 @@ modal_input.addEventListener('input', (e) => {
                 var list = data.filter(function (pokemon) {
                     return pokemon.name.includes(value) || pokemon.id.toString().includes(value);
                 });
-                console.log(list);
+                // console.log(list);
                 list.forEach((result) => {
                     modal_pokemon.innerHTML += `
                     <a href="detail.html?id=${result.id}">
@@ -147,9 +147,9 @@ modal_input.addEventListener('input', (e) => {
 
 const search = (value) => {
     pokemon.innerHTML = ''
-    loading.innerHTML = `<p class="placeholder-glow">
-    <span class="placeholder col-12"></span>
-  </p>`
+    loading.innerHTML = `<div style="height: 10px" class="progress rounded-pill">
+    <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%" class="progress-bar progress-bar-striped progress-bar-animated rounded-pill"></div>
+</div>`
     setTimeout(() => {
         data.then(data => {
             if (selected_type !== '') {
@@ -161,7 +161,7 @@ const search = (value) => {
                         result.types.map((type) => {
                             if (type.name === selected_type) {
                                 pokemon.innerHTML += `
-                                    <a href="detail/${result.id}"
+                                    <a href="detail.html?id=${result.id}"
                                     <div class="col-md-4">
                                     <div class="card p-3 mb-2 shadow-sm">
                                     <div class="d-flex justify-content-between">
@@ -202,7 +202,7 @@ const search = (value) => {
                     // pokemon.innerHTML = ''
                     list.forEach((result) => {
                         pokemon.innerHTML += `
-                      <a href="detail/${result.id}"
+                      <a href="detail.html?id=${result.id}"
                       <div class="col-md-4">
                       <div class="card p-3 mb-2 shadow-sm">
                       <div class="d-flex justify-content-between">
@@ -255,13 +255,13 @@ input.addEventListener('keypress', (e) => {
 const all_data = () => {
     pokemon.innerHTML = ''
     type_show.innerHTML = `Type: <span class="badge all mx-1">All</span>`
-    loading.innerHTML = `<p class="placeholder-glow">
-    <span class="placeholder col-12"></span>
-  </p>`
+    loading.innerHTML = `<div style="height: 10px" class="progress rounded-pill">
+    <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%" class="progress-bar progress-bar-striped progress-bar-animated rounded-pill"></div>
+    </div>`
     setTimeout(() => {
         data.then(data => data.forEach((result) => {
             pokemon.innerHTML += `
-          <a href="detail/${result.id}"
+          <a href="detail.html?id=${result.id}"
           <div class="col-md-4">
           <div class="card p-3 mb-2 shadow-sm">
             <div class="d-flex justify-content-between">

@@ -52,8 +52,14 @@
 }
 
 .modal-image {
-    width: 250%;
+    width: 5rem;
     object-fit: scale-down;
+    margin-right: 2rem;
+}
+
+#modal-pokemon {
+    overflow-y: auto;
+    height: 75vh !important;
 }
 
 .modal-star {
