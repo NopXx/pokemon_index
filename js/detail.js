@@ -60,6 +60,7 @@ const showDetail = () => {
         });
         console.log(list);
         const color = list[0].types[0].name
+        document.title = capitalizeFirstLetter(list[0].name)
         document.getElementById("back-color").classList.add(color)
         list[0].stats.forEach((item) => {
             stats.innerHTML += `
