@@ -8,7 +8,6 @@ const stats = document.getElementById('stats')
 const character = document.getElementById('character');
 
 if (style_image != null) {
-    console.log(style_image)
     if (style_image === '1') {
         document.getElementById('image-default').checked = true;
     } else {
@@ -38,7 +37,9 @@ const setWidthBar = (str, stat) => {
 }
 
 const id = urlParams.get('id')
-console.log(id);
+if (id === null) {
+    location.href = 'index.html'
+}
 
 const data = fetch('./pokemon_data.json')
     .then(response => response.json())
@@ -58,7 +59,7 @@ const showDetail = () => {
         const list = data.filter(function (pokemon) {
             return pokemon.id.toString() == id;
         });
-        console.log(list);
+        // console.log(list);
         const color = list[0].types[0].name
         document.title = capitalizeFirstLetter(list[0].name)
         document.getElementById("back-color").classList.add(color)
@@ -112,7 +113,20 @@ const showDetail = () => {
         list[0].types.forEach((item) => {
             type.innerHTML += `<span class="type ${item.name} mx-1 px-3 py-1 Typedropdown">${capitalizeFirstLetter(item.name)}</span>`
         })
+       list[0].evolutions.forEach((result) => {
+        const evolution = document.getElementById('evolution')
+        const evolutions = document.getElementById('evolutions')
+            if (result.length > 1) {
+                    evolutions.classList.add('row')
+                    result.forEach((item) => { evolutions.innerHTML += `<p>${item.name}</p>` })
+                
+            } else {
+                evolution.classList.add('row')
+                evolution.innerHTML += `<div class="col-4"><p>${result.name}</p></div>`
+                // console.log(result)
+            }
     })
+})
 }
 
 showDetail()
