@@ -54,6 +54,16 @@ const capitalizeFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+const formath = (str) => {
+    if (str.toString().length === 1) {
+        return '000' + str
+    } else if (str.toString().length === 2) {
+        return '00' + str
+    } else {
+        return '0' + str
+    }
+}
+
 const showDetail = () => {
     data.then((data) => {
         const list = data.filter(function (pokemon) {
@@ -81,7 +91,7 @@ const showDetail = () => {
             <h1>${capitalizeFirstLetter(item.name)}</h2>
             <p>#${item.id}</p>
             <div class="text-center my-3">
-                <img src="${item[image_show]}" class=" rounded-circle p-4" alt="${item.name}" style="background-color: whitesmoke; width: 70%;">
+                <img src="${item[image_show]}" class="rounded-circle p-4 evolution" alt="${item.name}" style="background-color: whitesmoke; width: 70%;">
             </div>
             `
             document.getElementById('detail').innerHTML = `
@@ -117,12 +127,47 @@ const showDetail = () => {
         const evolution = document.getElementById('evolution')
         const evolutions = document.getElementById('evolutions')
             if (result.length > 1) {
+                    evolutions.classList.add('col-8')
                     evolutions.classList.add('row')
-                    result.forEach((item) => { evolutions.innerHTML += `<p>${item.name}</p>` })
+                    result.forEach((item) => { evolutions.innerHTML += `<div class="col-4">
+                    <div class="card p-3 mb-2 shadow">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="ms-2 c-details">
+                                    <h4 class="mb-0" id="name">${capitalizeFirstLetter(item.name)}</h4><span>${formath(item.id)}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                        <div class="d-flex justify-content-center">
+                            <img src="${item[image_show]}" class="evolution"  alt="" id="image">
+                        </div>
+                        </div>
+                    </div>
+                </div>` })
                 
             } else {
+                evolution.classList.add('col-auto')
                 evolution.classList.add('row')
-                evolution.innerHTML += `<div class="col-4"><p>${result.name}</p></div>`
+                evolution.innerHTML += `
+                <div class="col-auto">
+                    <div class="card p-3 mb-2 shadow">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="ms-2 c-details">
+                                    <h4 class="mb-0" id="name">${capitalizeFirstLetter(result.name)}</h4>
+                                    <span>${formath(result.id)}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                        <div class="d-flex justify-content-center">
+                            <img src="${result[image_show]}" class="default" alt="" id="image">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                `
                 // console.log(result)
             }
     })

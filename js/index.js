@@ -99,7 +99,7 @@ select_type.addEventListener('click', (e) => {
                           </div>
                           <div class="mt-5">
                               <div class="d-flex justify-content-center">
-                              <img src="${result[image_show]}" alt="" id="image">
+                              <img src="${result[image_show]}" class="default" alt="" id="image">
                               </div>
                           </div>
                       </div>
@@ -195,7 +195,7 @@ const search = (value) => {
                                     </div>
                                     <div class="mt-5">
                                         <div class="d-flex justify-content-center">
-                                        <img src="${result[image_show]}" alt="" id="image">
+                                        <img src="${result[image_show]}" class="default" alt="" id="image">
                                         </div>
                                     </div>
                                 </div>
@@ -295,7 +295,7 @@ const all_data = () => {
             </div>
             <div class="mt-5">
               <div class="d-flex justify-content-center">
-                <img src="${result[image_show]}" alt="" id="image">
+                <img src="${result[image_show]}" class="default" alt="" id="image">
               </div>
             </div>
         </div>

@@ -159,8 +159,17 @@ a:active {
     color: #fafafa;
 }
 
-img {
+.default {
     width: 200px;
+    object-fit: contain;
+}
+
+.default-1 {
+    width: 10rem;
+    object-fit: contain;
+}
+.evolution {
+    width: 20%;
     object-fit: contain;
 }
 
