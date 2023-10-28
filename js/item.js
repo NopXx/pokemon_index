@@ -958,3 +958,20 @@ export const item = [{
     "category": "Machines"
   }
 ]
+
+const item_html = document.getElementById('item')
+
+item.forEach((data) => {
+  item_html.innerHTML += `
+  <tr>
+      <td colspan="1">
+          <img
+              src="${data.image_pix}"
+              alt>
+      </td>
+      <td colspan="1">${data.name}</td>
+      <td colspan="1">${data.category}</td>
+      <td colspan="18">${data.effect}</td>
+  </tr>
+  `
+})
