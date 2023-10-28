@@ -67,20 +67,29 @@
             </div>
             <div class="modal-body">
 
-              <div class="btn-group" id="filterDay" data-toggle="buttons">
-                <label class="btn btn-default blue">
-                  <input type="radio" class="toggle" name="toggle" value="1"
-                    id="image-default">
-                  <img
-                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
-                    lt="image-default">
+              <div class="btn-group row" id="filterDay" data-toggle="buttons">
+                <label class="btn btn-default blue col-md-6 col-sm-12">
+                  <div
+                    class="d-flex flex-column justify-content-between align-item-center">
+
+                    <input type="radio" class="toggle" name="toggle" value="1"
+                      id="image-default">
+                    <img
+                      src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+                      lt="image-default" class="default-1 mt-5">
+                    <h2 class="mt-5">Art</h2>
+                  </div>
                 </label>
-                <label class="btn btn-default blue">
-                  <input type="radio" class="toggle" name="toggle" value="2"
-                    id="image-pix">
-                  <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                    alt="image_pix">
+                <label class="btn btn-default blue col-md-6 col-sm-12">
+                  <div
+                    class="d-flex flex-column justify-content-between align-item-center">
+                    <input type="radio" class="toggle" name="toggle" value="2"
+                      id="image-pix">
+                    <img
+                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                      alt="image_pix" class="default">
+                    <h2 class="mt-5">pixle</h2>
+                  </div>
                 </label>
               </div>
             </div>
