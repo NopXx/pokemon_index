@@ -6,6 +6,9 @@ const style_image = localStorage.getItem('style-image');
 const save = document.getElementById('save-image')
 const stats = document.getElementById('stats')
 const character = document.getElementById('character');
+import {
+    data
+} from './pokemon_data.js'
 
 if (style_image != null) {
     if (style_image === '1') {
@@ -41,15 +44,6 @@ if (id === null) {
     location.href = 'index.html'
 }
 
-const data = fetch('./pokemon_data.json')
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-
 const capitalizeFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -65,16 +59,15 @@ const formath = (str) => {
 }
 
 const showDetail = () => {
-    data.then((data) => {
-        const list = data.filter(function (pokemon) {
-            return pokemon.id.toString() == id;
-        });
-        // console.log(list);
-        const color = list[0].types[0].name
-        document.title = capitalizeFirstLetter(list[0].name)
-        document.getElementById("back-color").classList.add(color)
-        list[0].stats.forEach((item) => {
-            stats.innerHTML += `
+    const list = data.filter(function (pokemon) {
+        return pokemon.id.toString() == id;
+    });
+    // console.log(list);
+    const color = list[0].types[0].name
+    document.title = capitalizeFirstLetter(list[0].name)
+    document.getElementById("back-color").classList.add(color)
+    list[0].stats.forEach((item) => {
+        stats.innerHTML += `
             <div class="row">
                 <div class="col-3 text-end">
                     <p>${capitalizeFirstLetter(item.name)}</p>
@@ -85,16 +78,16 @@ const showDetail = () => {
                     </div>
                 </div>
             </div>`
-        })
-        list.forEach((item) => {
-            character.innerHTML = `
+    })
+    list.forEach((item) => {
+        character.innerHTML = `
             <h1>${capitalizeFirstLetter(item.name)}</h2>
             <p>#${item.id}</p>
             <div class="text-center my-3">
                 <img src="${item[image_show]}" class="rounded-circle p-4 evolution" alt="${item.name}" style="background-color: whitesmoke; width: 70%;">
             </div>
             `
-            document.getElementById('detail').innerHTML = `
+        document.getElementById('detail').innerHTML = `
             <div class="row">
                 <div class="col-4 text-end">
                 <p class="fs-5">Height : </p>
@@ -118,18 +111,19 @@ const showDetail = () => {
                 </div>
             </div>
             `
-        })
-        const type = document.getElementById('types')
-        list[0].types.forEach((item) => {
-            type.innerHTML += `<span class="type ${item.name} mx-1 px-3 py-1 Typedropdown">${capitalizeFirstLetter(item.name)}</span>`
-        })
-       list[0].evolutions.forEach((result) => {
+    })
+    const type = document.getElementById('types')
+    list[0].types.forEach((item) => {
+        type.innerHTML += `<span class="type ${item.name} mx-1 px-3 py-1 Typedropdown">${capitalizeFirstLetter(item.name)}</span>`
+    })
+    list[0].evolutions.forEach((result) => {
         const evolution = document.getElementById('evolution')
         const evolutions = document.getElementById('evolutions')
-            if (result.length > 1) {
-                    evolutions.classList.add('col-8')
-                    evolutions.classList.add('row')
-                    result.forEach((item) => { evolutions.innerHTML += `<div class="col-4">
+        if (result.length > 1) {
+            evolutions.classList.add('col-8')
+            evolutions.classList.add('row')
+            result.forEach((item) => {
+                evolutions.innerHTML += `<div class="col-4">
                     <div class="card p-3 mb-2 shadow">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-row align-items-center">
@@ -144,12 +138,13 @@ const showDetail = () => {
                         </div>
                         </div>
                     </div>
-                </div>` })
-                
-            } else {
-                evolution.classList.add('col-auto')
-                evolution.classList.add('row')
-                evolution.innerHTML += `
+                </div>`
+            })
+
+        } else {
+            evolution.classList.add('col-auto')
+            evolution.classList.add('row')
+            evolution.innerHTML += `
                 <div class="col-auto">
                     <div class="card p-3 mb-2 shadow">
                         <div class="d-flex justify-content-between">
@@ -168,10 +163,10 @@ const showDetail = () => {
                     </div>
                 </div>
                 `
-                // console.log(result)
-            }
+            // console.log(result)
+        }
     })
-})
+
 }
 
 showDetail()
