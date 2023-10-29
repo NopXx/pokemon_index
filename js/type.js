@@ -5,6 +5,7 @@ const urlParams = new URLSearchParams(queryString);
 import {data} from './pokemon_data.js'
 const type_name = urlParams.get('type-name')
 const pokemon = document.getElementById('pokemon');
+const save = document.getElementById('save-image')
 const style_image = localStorage.getItem('style-image');
 
 const capitalizeFirstLetter = (str) => {
@@ -80,3 +81,17 @@ const show_data = () => {
 }
 
 show_data()
+
+
+save.addEventListener('click', () => {
+    const radio = document.querySelectorAll('input[name="toggle')
+    let selectedSize;
+    for (const radioButton of radio) {
+        if (radioButton.checked) {
+            selectedSize = radioButton.value;
+            break;
+        }
+    }
+    localStorage.setItem('style-image', selectedSize)
+    location.reload();
+})
