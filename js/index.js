@@ -24,9 +24,9 @@ if (style_image != null) {
 
 var image_show = style_image == '1' ? 'image' : 'image_pix'
 
-const capitalizeFirstLetter = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
+// const capitalizeFirstLetter = (str) => {
+//     return str.charAt(0).toUpperCase() + str.slice(1);
+// }
 
 const removeClass = () => {
     for (var i = 0; i < elements.length; i++) {
@@ -39,15 +39,15 @@ function removeType() {
     all_data()
 }
 
-const formath = (str) => {
-    if (str.toString().length === 1) {
-        return '000' + str
-    } else if (str.toString().length === 2) {
-        return '00' + str
-    } else {
-        return '0' + str
-    }
-}
+// const formath = (str) => {
+//     if (str.toString().length === 1) {
+//         return '000' + str
+//     } else if (str.toString().length === 2) {
+//         return '00' + str
+//     } else {
+//         return '0' + str
+//     }
+// }
 
 // filter pokemon type
 select_type.addEventListener('click', (e) => {
@@ -56,7 +56,7 @@ select_type.addEventListener('click', (e) => {
         const types = e.target.innerHTML.toLowerCase()
         selected_type = types
         e.target.classList.add('select')
-        location.href = 'type.html?type-name='+selected_type
+        location.href = 'type.html?type-name=' + selected_type
     }
     console.log(selected_type)
 })
@@ -65,26 +65,27 @@ select_type.addEventListener('click', (e) => {
 
 
 const all_data = () => {
-    pokemon.innerHTML = ''
-    // type_show.innerHTML = `Type: <span class="badge all mx-1">All</span>`
-    loading.innerHTML = `<div style="height: 10px" class="progress rounded-pill">
-    <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%" class="progress-bar progress-bar-striped progress-bar-animated rounded-pill"></div>
-    </div>`
-    setTimeout(() => {
-        data.map((result) => {
-            pokemon.innerHTML += `
-          <a href="detail.html?id=${result.id}"
-          <div class="col-md-4">
+
+        pokemon.innerHTML = ''
+        for (var i = 0; i < 4; i++) {
+            let num = Math.floor(Math.random() * 151) + 1;
+            var list = data.filter(function (pokemon) {
+                return pokemon.id === num;
+            });
+            list.forEach((result) => {
+                pokemon.innerHTML += `
+          <a href="detail.html?id=${result.id}" id="pokemon-card"
+          <div class="col-md-3">
           <div class="card p-3 mb-2 shadow-sm">
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-row align-items-center">
                     <div class="ms-2 c-details">
-                        <h4 class="mb-0" id="name">${capitalizeFirstLetter(result.name)}</h4> <span>${formath(result.id)}</span>
+                        <h4 class="mb-0" id="name">${result.name}</h4> <span>${result.id}</span>
                     </div>
                 </div>
                 <div class="badge" id="types"> 
                 ${result.types.map((type) => (
-                  `<span class="${type.name}">${capitalizeFirstLetter(type.name)}</span>`
+                  `<span class="${type.name}">${type.name}</span>`
                   ))}
                   
                 </div>
@@ -98,12 +99,13 @@ const all_data = () => {
         </div>
         </a>
         `
-        })
-    }, pokemon);
-    loading.innerHTML = ''
-}
+            })
+        }
+    }
+    all_data()
+    setInterval(() => {all_data()}, 10000)
 // get function
-all_data()
+
 
 
 
