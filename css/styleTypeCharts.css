@@ -1,46 +1,5 @@
 
 
-main,header,nav,article,section,aside,footer,details,figcaption,figure,hgroup,menu {
-    display: block
-}
-
-h1,h2,h3,h4,p,dl,pre {
-    margin: 0 0 1rem;
-    padding: 0
-}
-
-ul,ol,blockquote,dd {
-    margin: 0 0 1rem 2rem;
-    padding: 0
-}
-
-h1,h2,h3,h4 {
-    color: #000;
-    font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial sans-serif;
-    font-weight: bold;
-    line-height: 1.2;
-    word-wrap: break-word;
-    overflow-wrap: break-word
-}
-
-h1>a,h2>a,h3>a,h4>a {
-    color: #000
-}
-
-
-
-h2,.text-giga {
-    font-size: 2rem
-}
-
-h3,.text-mega {
-    font-size: 1.5rem
-}
-
-h4,.text-kilo {
-    font-size: 1.25rem
-}
-
 table {
     margin: 0 auto 1rem;
     border-collapse: collapse;
@@ -49,18 +8,6 @@ table {
 
 th,td {
     padding: 4px 10px
-}
-
-a {
-    color: #2769be;
-    text-decoration: none;
-    transition: color .2s,background-color .2s
-}
-
-a:hover,a:active,a:focus {
-    color: #a42121;
-    text-decoration: underline;
-    outline: 0
 }
 
 img {
