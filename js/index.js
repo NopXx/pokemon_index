@@ -24,9 +24,9 @@ if (style_image != null) {
 
 var image_show = style_image == '1' ? 'image' : 'image_pix'
 
-// const capitalizeFirstLetter = (str) => {
-//     return str.charAt(0).toUpperCase() + str.slice(1);
-// }
+const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 const removeClass = () => {
     for (var i = 0; i < elements.length; i++) {
@@ -39,15 +39,15 @@ function removeType() {
     all_data()
 }
 
-// const formath = (str) => {
-//     if (str.toString().length === 1) {
-//         return '000' + str
-//     } else if (str.toString().length === 2) {
-//         return '00' + str
-//     } else {
-//         return '0' + str
-//     }
-// }
+const formath = (str) => {
+    if (str.toString().length === 1) {
+        return '000' + str
+    } else if (str.toString().length === 2) {
+        return '00' + str
+    } else {
+        return '0' + str
+    }
+}
 
 // filter pokemon type
 select_type.addEventListener('click', (e) => {
@@ -80,12 +80,12 @@ const all_data = () => {
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-row align-items-center">
                     <div class="ms-2 c-details">
-                        <h4 class="mb-0" id="name">${result.name}</h4> <span>${result.id}</span>
+                        <h4 class="mb-0" id="name">${capitalizeFirstLetter(result.name)}</h4> <span>#${formath(result.id)}</span>
                     </div>
                 </div>
                 <div class="badge" id="types"> 
                 ${result.types.map((type) => (
-                  `<span class="${type.name}">${type.name}</span>`
+                  `<span class="${type.name}">${capitalizeFirstLetter(type.name)}</span>`
                   ))}
                   
                 </div>
