@@ -172,46 +172,6 @@ const showDetail = () => {
 showDetail()
 
 
-modal_input.addEventListener('input', (e) => {
-    const value = e.target.value.toLowerCase()
-    modal_pokemon.innerHTML = ''
-    console.log(value)
-    if (value.length > 0) {
-        setTimeout(() => {
-            data.then(data => {
-                var list = data.filter(function (pokemon) {
-                    return pokemon.name.includes(value) || pokemon.id.toString().includes(value);
-                });
-                // console.log(list);
-                list.forEach((result) => {
-                    modal_pokemon.innerHTML += `
-                        <a href="detail.html?id=${result.id}">
-                        <div
-                    class="d-flex justify-content-between align-items-center modal-card" style="cursor: pointer;">
-                    <div class="d-flex flex-row align-items-center">
-                      <img src="${result[image_show]}" class="modal-image" alt="">
-                      <div class="d-flex flex-column">
-                        <span>${result.name}</span>
-                        <div
-                          class="d-flex flex-row align-items-center modal-time-text">
-                          <small>${result.id}</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                    ${result.types.map((type) => {
-                        return `<span class="badge ${type.name} m-1">${capitalizeFirstLetter(type.name)}</span>`
-                    }
-                    )}
-                    </div>
-                  </div>
-                  </a>
-                  `
-                })
-            })
-        }, modal_pokemon);
-    }
-})
 
 save.addEventListener('click', () => {
     const radio = document.querySelectorAll('input[name="toggle')
@@ -224,4 +184,4 @@ save.addEventListener('click', () => {
     }
     localStorage.setItem('style-image', selectedSize)
     location.reload();
-})
+  })
