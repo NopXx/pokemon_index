@@ -226,7 +226,8 @@ export const item = [{
     "name": "Dowsing Machine",
     "image_pix": "https://archives.bulbagarden.net/media/upload/2/25/Bag_Dowsing_Machine_ORAS_Sprite.png",
     "image": "https://archives.bulbagarden.net/media/upload/0/0f/RG_Itemfinder.png",
-    "effect": "Searches for hidden items on the ground."
+    "effect": "Searches for hidden items on the ground.",
+    "category": "Unknow"
   },
   {
     "id": 30,
@@ -234,7 +235,7 @@ export const item = [{
     "image_pix": "https://img.pokemondb.net/sprites/items/leaf-stone.png",
     "image": "https://archives.bulbagarden.net/media/upload/b/b3/Dream_Leaf_Stone_Sprite.png",
     "effect": "Evolves certain species of Pokemon.",
-    "category": "General items\t"
+    "category": "General items"
   },
   {
     "id": 31,
@@ -351,14 +352,16 @@ export const item = [{
     "id": 45,
     "name": "Poke Ball",
     "image_pix": "https://img.pokemondb.net/sprites/items/poke-ball.png",
-    "effect": "Catches wild Pokemon."
+    "effect": "Catches wild Pokemon.",
+    "category": "Unknow"
   },
   {
     "id": 46,
     "name": "Poke Doll",
     "image_pix": "https://archives.bulbagarden.net/media/upload/a/a8/Bag_Pok%C3%A9_Doll_Sprite.png",
     "image": "https://archives.bulbagarden.net/media/upload/a/aa/Dream_Pok%C3%A9_Doll_Sprite.png",
-    "effect": "When used from the Bag during a battle with a wild Pokemon, it allows the player to escape instantly regardless of any factors that would otherwise prevent escape."
+    "effect": "When used from the Bag during a battle with a wild Pokemon, it allows the player to escape instantly regardless of any factors that would otherwise prevent escape.",
+    "category" : "Unknow"
   },
   {
     "id": 47,
@@ -372,7 +375,8 @@ export const item = [{
     "id": 48,
     "name": "Potion",
     "image_pix": "https://img.pokemondb.net/sprites/items/potion.png",
-    "effect": "Restores 20 HP."
+    "effect": "Restores 20 HP.",
+    "category": "Unknow"
   },
   {
     "id": 49,
@@ -427,7 +431,8 @@ export const item = [{
     "name": "Safari Ball",
     "image_pix": "https://img.pokemondb.net/sprites/items/safari-ball.png",
     "image": "https://archives.bulbagarden.net/media/upload/1/15/Dream_Safari_Ball_Sprite.png",
-    "effect": "Catches Pokemon in the Safari Zone or Great Marsh."
+    "effect": "Catches Pokemon in the Safari Zone or Great Marsh.",
+    "category": "Unknow"
   },
   {
     "id": 56,
@@ -484,7 +489,8 @@ export const item = [{
     "name": "Town Map",
     "image_pix": "https://archives.bulbagarden.net/media/upload/c/c7/Bag_Town_Map_Sprite.png",
     "image": "https://archives.bulbagarden.net/media/upload/thumb/6/6c/RG_Town_Map.png/375px-RG_Town_Map.png",
-    "effect": "A very convenient map that can be viewed anytime. It even shows your present location."
+    "effect": "A very convenient map that can be viewed anytime. It even shows your present location.",
+    "category": "Unknow"
   },
   {
     "id": 64,
@@ -529,13 +535,15 @@ export const item = [{
     "name": " X Sp. Atk",
     "image_pix": "https://img.pokemondb.net/sprites/items/x-sp-atk.png",
     "image": "https://archives.bulbagarden.net/media/upload/e/e6/Dream_X_Sp._Atk_Sprite.png",
-    "effect": "Raises Special Attack of a Pokemon in battle."
+    "effect": "Raises Special Attack of a Pokemon in battle.",
+    "category": "Unknow"
   },
   {
     "id": 70,
     "name": "X Speed",
     "image_pix": "https://img.pokemondb.net/sprites/items/x-speed.png",
-    "effect": "Raises Speed of a Pokemon in battle."
+    "effect": "Raises Speed of a Pokemon in battle.",
+    "category": "Unknow"
   },
   {
     "id": 71,
@@ -958,20 +966,75 @@ export const item = [{
     "category": "Machines"
   }
 ]
-
+const category = document.getElementById('category')
 const item_html = document.getElementById('item')
+const elements = document.getElementsByClassName('dropdown-item')
 
-item.forEach((data) => {
-  item_html.innerHTML += `
-  <tr>
-      <td colspan="1">
+function onlyUnique(value, index, array) {
+  return array.indexOf(value) === index;
+}
+
+const cat = []
+// console.log(a)
+
+const get_all = () => {
+  item_html.innerHTML = ''
+  item.forEach((data) => {
+    cat.push(data.category)
+    item_html.innerHTML += `
+    <tr>
+    <td colspan="1">
+      <img
+          src="${data.image_pix}"
+          alt>
+          </td>
+          <td colspan="1">${data.name}</td>
+          <td colspan="1">${data.category}</td>
+          <td colspan="18">${data.effect}</td>
+          </tr>
+          `
+  })
+}
+
+get_all()
+
+const a = cat.filter(onlyUnique)
+a.forEach((data) => {
+  category.innerHTML += `<li>
+  <a class="dropdown-item" href="#">${data}</a>
+</li>
+<li><hr class="dropdown-divider"></li>`
+})
+
+const removeClass = () => {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.remove('active');
+  }
+}
+
+category.addEventListener('click', (e) => {
+  const category = e.target.innerHTML
+  removeClass()
+  e.target.classList.add('active')
+  item_html.innerHTML = ''
+  if (category === 'All') {
+    get_all()
+  } else {
+    item.forEach((data) => {
+      if (data.category == category) {
+        item_html.innerHTML += `
+        <tr>
+        <td colspan="1">
           <img
               src="${data.image_pix}"
               alt>
-      </td>
-      <td colspan="1">${data.name}</td>
-      <td colspan="1">${data.category}</td>
-      <td colspan="18">${data.effect}</td>
-  </tr>
-  `
+              </td>
+              <td colspan="1">${data.name}</td>
+              <td colspan="1">${data.category}</td>
+              <td colspan="18">${data.effect}</td>
+              </tr>
+              `
+      }
+    })
+  }
 })
