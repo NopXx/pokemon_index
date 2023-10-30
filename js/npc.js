@@ -7,7 +7,7 @@ export const npc = [{
     "gender": "Male",
     "trainer": [{
         "no": 1,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       },
       {
         "no": 2,
@@ -23,7 +23,7 @@ export const npc = [{
     "id": 2,
     "name": "Blue Oak",
     "image_pix": "https://archives.bulbagarden.net/media/upload/9/92/Spr_RG_Blue_1.png",
-    "image": "https://archives.bulbagarden.net/media/upload/1/1a/Lets_Go_Pikachu_Eevee_Blue.png",
+    "image": "https://archives.bulbagarden.net/media/upload/thumb/1/1a/Lets_Go_Pikachu_Eevee_Blue.png/320px-Lets_Go_Pikachu_Eevee_Blue.png",
     "age": 18,
     "gender": "Male",
     "trainer": [{
@@ -40,7 +40,7 @@ export const npc = [{
       },
       {
         "no": 4,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       },
       {
         "no": 5,
@@ -52,7 +52,7 @@ export const npc = [{
     "id": 3,
     "name": "Agatha",
     "image_pix": "https://archives.bulbagarden.net/media/upload/f/f4/Spr_RG_Agatha.png",
-    "image": "https://archives.bulbagarden.net/media/upload/thumb/5/5c/Lets_Go_Pikachu_Eevee_Agatha.png/438px-Lets_Go_Pikachu_Eevee_Agatha.png",
+    "image": "https://img.wattpad.com/ee67b974f3f3c921ac876b9c86b4dc9874fb3638/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f76446a7a33466a4a5368334832773d3d2d3930333839373237362e313631383836383738303835613965363932323037393334323330362e706e67?s=fit&w=720&h=720",
     "age": "Unknow",
     "gender": "Female",
     "trainer": [{
@@ -99,7 +99,7 @@ export const npc = [{
       },
       {
         "no": 3,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       }
     ]
   },
@@ -118,6 +118,8 @@ export const npc = [{
   {
     "id": 7,
     "name": "Lt. Surge",
+    "image_pix": "https://archives.bulbagarden.net/media/upload/a/a2/Spr_RG_Lt_Surge.png",
+    "image": "https://archives.bulbagarden.net/media/upload/archive/b/bc/20180809132420%21Lets_Go_Pikachu_Eevee_Lt_Surge.png",
     "age": "Unknow",
     "gender": "Male",
     "trainer": [{
@@ -126,7 +128,7 @@ export const npc = [{
       },
       {
         "no": 2,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       }
     ]
   },
@@ -139,7 +141,7 @@ export const npc = [{
     "gender": "Male",
     "trainer": [{
       "no": 1,
-      "class": "Pok�mon fanatic"
+      "class": "Pokemon fanatic"
     }]
   },
   {
@@ -155,7 +157,7 @@ export const npc = [{
       },
       {
         "no": 2,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       }
     ]
   },
@@ -172,7 +174,7 @@ export const npc = [{
       },
       {
         "no": 2,
-        "class": "Pok�mon Breeder*"
+        "class": "Pokemon Breeder*"
       },
       {
         "no": 3,
@@ -180,7 +182,7 @@ export const npc = [{
       },
       {
         "no": 4,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       }
     ]
   },
@@ -209,7 +211,7 @@ export const npc = [{
       },
       {
         "no": 2,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       }
     ]
   },
@@ -238,7 +240,7 @@ export const npc = [{
       },
       {
         "no": 5,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       },
       {
         "no": 6,
@@ -346,25 +348,26 @@ export const npc = [{
       },
       {
         "no": 2,
-        "class": "Pok�mon Trainer"
+        "class": "Pokemon Trainer"
       }
     ]
   },
   {
     "id": 18,
-    "name": "Nurse Joy",
-    "image": "https://archives.bulbagarden.net/media/upload/thumb/d/d8/Nurse_Joy_JN.png/250px-Nurse_Joy_JN.png",
+    "name": "Old man",
+    "image": "https://archives.bulbagarden.net/media/upload/a/a4/FRLG_Old_man_Back.png",
+    "image_pix": "https://archives.bulbagarden.net/media/upload/3/30/RB_Old_man_Back.png",
     "age": "Unknow",
-    "gender": "Female",
+    "gender": "Male",
     "trainer": [{
       "no": 1,
-      "class": "Nurse"
+      "class": "Trainer"
     }]
   },
   {
     "id": 19,
     "name": "Professor Samuel Oak",
-    "image_pix": "https://archives.bulbagarden.net/media/upload/4/45/Oak_OD.png",
+    "image_pix": "https://archives.bulbagarden.net/media/upload/1/1e/Spr_RG_Oak.png",
     "image": "https://archives.bulbagarden.net/media/upload/thumb/3/3e/Lets_Go_Pikachu_Eevee_Professor_Oak.png/180px-Lets_Go_Pikachu_Eevee_Professor_Oak.png",
     "age": "Unknow",
     "gender": "Male",
@@ -378,8 +381,72 @@ export const npc = [{
       },
       {
         "no": 3,
-        "class": "Pok�mon Professor"
+        "class": "Pokemon Professor"
       }
     ]
   }
 ]
+
+
+
+const style_image = localStorage.getItem('style-image');
+const save = document.getElementById('save-image')
+const npc_html = document.getElementById("npc")
+
+if (style_image != null) {
+  console.log(style_image)
+  if (style_image === '1') {
+      document.getElementById('image-default').checked = true;
+  } else {
+      document.getElementById('image-pix').checked = true;
+  }
+} else {
+  localStorage.setItem('style-image', 1)
+  document.getElementById('image-default').checked = true;
+}
+
+var image_show = style_image == '1' ? 'image' : 'image_pix'
+
+npc_html.innerHTML = ''
+npc.forEach((data) => {
+  npc_html.innerHTML += `
+  <a href="npc_detail.html?id=${data.id}" class="col-md-3">
+  <div class="card p-3 mb-2 shadow-sm">
+      <div class="d-flex justify-content-between">
+          <div
+              class="d-flex flex-row align-items-center">
+              <div class="ms-2 c-details">
+                  <h4 class="mb-0" id="name">${data.name}</h4>
+              </div>
+          </div>
+          <div class="badge" id="types">
+              <span class="${data.gender === 'Male' ? 'dragon' : 'fairy'}">${data.gender}</span>
+          </div>
+      </div>
+      <div class="mt-5">
+          <div
+              class="d-flex justify-content-center">
+              <img
+                  src="${data[image_show]}"
+                  class="default" alt id="image">
+          </div>
+      </div>
+  </div>
+</a>
+  `
+
+})
+
+
+save.addEventListener('click', () => {
+  const radio = document.querySelectorAll('input[name="toggle')
+  let selectedSize;
+  for (const radioButton of radio) {
+      if (radioButton.checked) {
+          selectedSize = radioButton.value;
+          break;
+      }
+  }
+  localStorage.setItem('style-image', selectedSize)
+  location.reload();
+})
