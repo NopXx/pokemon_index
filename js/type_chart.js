@@ -488,6 +488,12 @@ export const type_chart = [
       }
     },
     "defense": {
+      "not": {
+        "title": null,
+        "value": [{
+          "no": null,
+          "name": null
+        }]},
       "very": {
         "title": "These types are not very effective against Electric Pokémon:",
         "value": [

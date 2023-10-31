@@ -124,7 +124,7 @@ type_data.forEach((type) => {
     if (type.attack.super['title'] != null) {
         attack.innerHTML += `
         <div class="my-2">
-            <p>${type.attack.super['title']}</p>
+            <p style="margin: 0;">${type.attack.super['title']}</p>
             <div class="row">
                 <div class="col"> `
         type.attack.super['value'].map((value) => {
@@ -138,11 +138,11 @@ type_data.forEach((type) => {
     if (type.attack.very['title'] != null) {
         attack.innerHTML += `
         <div class="my-2">
-            <p>${type.attack.very['title']}</p>
+            <p style="margin: 0;">${type.attack.very['title']}</p>
             <div class="row">
                 <div class="col"> `
         type.attack.very['value'].map((value) => {
-            attack.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-5 py-2">${capitalizeFirstLetter(value.name)}</span>`
+            attack.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-4 py-2">${capitalizeFirstLetter(value.name)}</span>`
         })
         attack.innerHTML += `
                 </div>
@@ -152,7 +152,7 @@ type_data.forEach((type) => {
     if (type.attack.not['title'] != null) {
         attack.innerHTML += `
         <div class="my-2">
-            <p>${type.attack.not['title']}</p>
+            <p style="margin: 0;">${type.attack.not['title']}</p>
             <div class="row">
                 <div class="col"> `
         type.attack.not['value'].map((value) => {
@@ -167,7 +167,7 @@ type_data.forEach((type) => {
     if (type.defense.super['title'] != null) {
         defense.innerHTML += `
         <div class="my-2">
-            <p>${type.defense.super['title']}</p>
+            <p style="margin: 0;">${type.defense.super['title']}</p>
             <div class="row">
                 <div class="col"> `
         type.defense.super['value'].map((value) => {
@@ -181,11 +181,11 @@ type_data.forEach((type) => {
     if (type.defense.very['title'] != null) {
         defense.innerHTML += `
         <div class="my-2">
-            <p>${type.defense.very['title']}</p>
+            <p style="margin: 0;">${type.defense.very['title']}</p>
             <div class="row">
                 <div class="col"> `
         type.defense.very['value'].map((value) => {
-            defense.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-5 py-2">${capitalizeFirstLetter(value.name)}</span>`
+            defense.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-4 py-2">${capitalizeFirstLetter(value.name)}</span>`
         })
         defense.innerHTML += `
                 </div>
@@ -195,7 +195,7 @@ type_data.forEach((type) => {
     if (type.defense.not['title'] != null) {
         defense.innerHTML += `
         <div class="my-2">
-            <p>${type.defense.not['title']}</p>
+            <p style="margin: 0;">${type.defense.not['title']}</p>
             <div class="row">
                 <div class="col"> `
         type.defense.not['value'].map((value) => {
