@@ -411,7 +411,7 @@ npc_html.innerHTML = ''
 npc.forEach((data) => {
   npc_html.innerHTML += `
   <a href="npc_detail.html?id=${data.id}" class="col-md-3">
-  <div class="card p-3 mb-2 shadow-sm">
+  <div class="card p-3 mb-2 shadow-sm" style="height: 400px;">
       <div class="d-flex justify-content-between">
           <div
               class="d-flex flex-row align-items-center">
@@ -428,7 +428,7 @@ npc.forEach((data) => {
               class="d-flex justify-content-center">
               <img
                   src="${data[image_show]}"
-                  class="default" alt id="image">
+                  class="default" alt id="image" style="height: 250px;">
           </div>
       </div>
   </div>
