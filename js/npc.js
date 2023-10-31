@@ -255,7 +255,7 @@ export const npc = [{
   {
     "id": 14,
     "name": "James",
-    "image_pix": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740902/image/pokemon/npc/James_pix_a1b05a.png",
+    "image_pix": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698742363/image/pokemon/npc/james_pix_xrgjlx.gif",
     "image": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740902/image/pokemon/npc/James_pmkplh.png",
     "age": 25,
     "gender": "Male",
@@ -284,7 +284,7 @@ export const npc = [{
   {
     "id": 15,
     "name": "Jessie",
-    "image_pix": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740905/image/pokemon/npc/Jessie_pix_pmmzll.png",
+    "image_pix": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698742363/image/pokemon/npc/jessie_pix_far4n6.gif",
     "image": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740904/image/pokemon/npc/Jessie_skgqdf.png",
     "age": 26,
     "gender": "Female",
