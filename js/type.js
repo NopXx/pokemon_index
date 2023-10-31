@@ -22,6 +22,25 @@ const formath = (str) => {
     }
 }
 
+function onlyUnique(value, index, array) {
+    return array.indexOf(value) === index;
+  }
+
+  const cat = []
+  data.forEach(result => {
+    result.types.map(type => (
+        cat.push(type.name)
+        ))
+  })
+  let url = false
+  const a = cat.filter(onlyUnique)
+  a.forEach((result) => {
+    if (result === type_name) {
+        url = true
+    }
+  })
+url ? '' : location.href = 'index.html'
+
 if (style_image != null) {
     console.log(style_image)
     if (style_image === '1') {
@@ -35,6 +54,15 @@ if (style_image != null) {
 }
 
 var image_show = style_image == '1' ? 'image' : 'image_pix'
+
+
+
+ 
+
+
+
+
+
 
 // update title
 document.title = `Pokémon | ${capitalizeFirstLetter(type_name)}`

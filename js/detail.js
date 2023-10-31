@@ -41,7 +41,7 @@ const setWidthBar = (str, stat) => {
 }
 
 const id = urlParams.get('id')
-if (id === null) {
+if (id === null || parseInt(id) > 151 || parseInt(id) < 1) {
     location.href = 'index.html'
 }
 
