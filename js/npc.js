@@ -190,7 +190,7 @@ export const npc = [{
     "id": 11,
     "name": "Bruno",
     "image_pix": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740897/image/pokemon/npc/Bruno_pix_zntthr.png",
-    "image": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740898/image/pokemon/npc/Erika_ijwali.png",
+    "image": "https://res.cloudinary.com/dqolakmsp/image/upload/v1698740896/image/pokemon/npc/Bruno_dwnlwi.png",
     "age": "Unknow",
     "gender": "Male",
     "trainer": [{
