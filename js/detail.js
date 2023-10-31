@@ -6,6 +6,7 @@ const style_image = localStorage.getItem('style-image');
 const save = document.getElementById('save-image')
 const stats = document.getElementById('stats')
 const character = document.getElementById('character');
+const nextpokemon = document.getElementById('nextpokemon');
 import {
     data
 } from './pokemon_data.js'
@@ -56,6 +57,38 @@ const formath = (str) => {
     } else {
         return '0' + str
     }
+}
+
+if (id === '1') {
+    nextpokemon.innerHTML = `
+    <div class="d-flex ml-4">
+        <a href="detail.html?id=${parseInt(id) + 1}" title="Forward Pokemon"><i class='bx bx-right-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex mx-4">
+        
+    </div>
+    `
+} else if (id === '151') {
+    nextpokemon.innerHTML = `
+    <div class="d-flex">
+        <a href="detail.html?id=${parseInt(id) - 1}" title="Backward Pokemon"><i class='bx bx-left-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex mx-4">
+        
+    </div>
+    `
+} else {
+    nextpokemon.innerHTML = `
+    <div class="d-flex">
+        <a href="detail.html?id=${parseInt(id) - 1}" title="Backward Pokemon"><i class='bx bx-left-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex ml-4">
+        <a href="detail.html?id=${parseInt(id) + 1}" title="Forward Pokemon"><i class='bx bx-right-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex mx-4">
+        
+    </div>
+    `
 }
 
 const showDetail = () => {
