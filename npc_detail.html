@@ -120,11 +120,11 @@
 
                 <div class="row justify-content-center mt-5">
                     <div class="col-4 card shadow-sm py-5">
-                        <h1 class="">Red</h1>
+                        <h1 id="name"></h1>
                         <div class="row justify-content-center">
                             <div class="col-5 card shadow-sm mx-4 my-2 p-5">
-                                <div class="d-flex justify-content-center">
-                                    <img src="https://res.cloudinary.com/dqolakmsp/image/upload/v1698739801/image/pokemon/npc/Red_pix_z4ujzv.png" class="default" alt="" id="image" style="height: 250px;">
+                                <div class="d-flex justify-content-center" id="image">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -133,21 +133,21 @@
                                 <div class="d-flex justify-content-between px-4">
                                     <div class="d-flex flex-row align-items-center">
                                         <div class="ms-2 c-details">
-                                            <h5 class="mb-0" id="name">Gender : </h5>
+                                            <h5 class="mb-0">Gender </h5>
                                         </div>
                                     </div>
-                                    <div class="badge" id="types">
-                                        <span class="dragon">Male</span>
+                                    <div class="badge">
+                                        <span class="" id="gender"></span>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between px-4">
                                     <div class="d-flex flex-row align-items-center">
                                         <div class="ms-2 c-details">
-                                            <h5 class="mb-0" id="name">Age : </h5>
+                                            <h5 class="mb-0" id="name">Age </h5>
                                         </div>
                                     </div>
                                     <div class="badge" id="types">
-                                        <span class="dragon">18</span>
+                                        <span class="normal" id="age"></span>
                                     </div>
                                 </div>
                             </div>
@@ -155,11 +155,9 @@
                         <div class="row justify-content-center">
                             <div class="col-8 card shadow-sm p-4">
                                 <h3 class="">Class</h3>
-                                <hr>
-                                <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">Pokémon Trainer</li>
-                                  <li class="list-group-item">Battle Legend</li>
-                                  <li class="list-group-item">Player character</li>
+                                <hr style="margin: 0;">
+                                <ul class="list-group list-group-flush" id="class">
+
                                 </ul>
                               </div>
                         </div>
@@ -176,6 +174,7 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
-        <script type="module" src="js/npc.js"></script>
+            <script type="module" src="js/npc_data.js"></script>
+        <script type="module" src="js/npc_detail.js"></script>
     </body>
 </html>
