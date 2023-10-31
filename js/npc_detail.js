@@ -11,6 +11,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const style_image = localStorage.getItem('style-image');
 const save = document.getElementById('save-image')
+const nextnpc = document.getElementById('nextnpc');
 
 if (style_image != null) {
     console.log(style_image)
@@ -34,6 +35,38 @@ if (id === null || parseInt(id) > 19 || parseInt(id) < 1) {
 const npc_id = npc.filter((data) => {
     return parseInt(data.id) === parseInt(id)
 })
+
+if (id === '1') {
+    nextnpc.innerHTML = `
+    <div class="d-flex ml-4">
+        <a href="npc_detail.html?id=${parseInt(id) + 1}" title="Forward NPC"><i class='bx bx-right-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex mx-4">
+        
+    </div>
+    `
+} else if (id === '151') {
+    nextnpc.innerHTML = `
+    <div class="d-flex">
+        <a href="npc_detail.html?id=${parseInt(id) - 1}" title="Backward NPC"><i class='bx bx-left-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex mx-4">
+        
+    </div>
+    `
+} else {
+    nextnpc.innerHTML = `
+    <div class="d-flex">
+        <a href="npc_detail.html?id=${parseInt(id) - 1}" title="Backward NPC"><i class='bx bx-left-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex ml-4">
+        <a href="npc_detail.html?id=${parseInt(id) + 1}" title="Forward NPC"><i class='bx bx-right-arrow-alt' style="font-size: 40px;"></i></a>
+    </div>
+    <div class="d-flex mx-4">
+        
+    </div>
+    `
+}
 
 npc_id.forEach((res) => {
     name.innerText = res.name
