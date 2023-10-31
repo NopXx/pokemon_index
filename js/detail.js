@@ -102,13 +102,12 @@ const showDetail = () => {
     list[0].stats.forEach((item) => {
         stats.innerHTML += `
             <div class="row">
-                <div class="col-3 text-end">
-                    <p>${capitalizeFirstLetter(item.name)}</p>
-                </div>
-                <div class="col-8 ">
-                    <div class="progress mt-1" style="height: 20px;">
+                <div class="container px-5">
+                    <p style="margin: 0;">${capitalizeFirstLetter(item.name)}</p>
+                    <div class="progress mt-1 mb-2 " style="height: 20px;">
                         <div class="progress-bar ${color}" role="progressbar" style="width: ${setWidthBar(item.name,item.base_stat)}%;">${item.base_stat}</div>
                     </div>
+                </div>
                 </div>
             </div>`
     })
