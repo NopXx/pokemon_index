@@ -45,6 +45,9 @@
                         <li class="nav-item">
                             <a href="npc.html" class="nav-link">NPC</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="TypeCharts.html" class="nav-link">TypeChart</a>
+                          </li>
                     </ul>
                     <div class="d-flex">
                         <i class='bx bx-cog' id="setting" data-bs-toggle="modal"
@@ -112,65 +115,27 @@
                 </div>
             </div>
             <!--  -->
+
             <section id="color" class="py-5 text-center container-fluid banner">
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto m-4">
                       <h1 id="type" style="font-size: 5rem;"></h1>
-                      <p class="text-start mt-4 p-4" style="background-color: rgba(255, 255, 255, 0.3);">
-                        The Psychic type has few outright strengths, however, it also has few weaknesses. In the first generation it ended up being massively overpowered, mainly due to a complete lack of powerful Bug moves, its only weakness. Furthermore, a mistake in the game meant that Ghost-type moves had no effect on Psychic (although this only affected the low-powered Lick). Generation 2 rectified the situation with the addition of the Dark type along with better Pokémon and moves of all types.
+                      <p class="text-start mt-4 p-4" style="background-color: rgba(255, 255, 255, 0.3);" id="detail">
+                        
                       </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="card shadow-sm col-lg-5 col-md-6 mx-auto p-3">
                         <h1>Attack pros & cons</h1>
-                        <div class="my-2">
-                            <p>Psychic moves are super-effective against:</p>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="badge fighting px-4 py-2">Fighting</span>
-                                    <span class="badge poison px-4 py-2">Poison</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="my-2">
-                            <p>Psychic moves are not very effective against:</p>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="badge psychic px-4 py-2">Psychic</span>
-                                    <span class="badge steel px-4 py-2">Steel</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="my-2">
-                            <p>Psychic moves have no effect on:</p>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="badge dark px-4 py-2">Dark</span>
-                                </div>
-                            </div>
+                        <div id="attack">
+                
                         </div>
                     </div>
                     <div class="card shadow-sm col-lg-5 col-md-6 mx-auto p-3">
                         <h1>Defense pros & cons</h1>
-                        <div class="my-2">
-                            <p>These types are not very effective against Psychic Pokémon:</p>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="badge fighting px-4 py-2">Fighting</span>
-                                    <span class="badge psychic px-4 py-2">Psychic</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="my-2">
-                            <p>These types are super-effective against Psychic Pokémon:</p>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="badge bug px-4 py-2">Bug</span>
-                                    <span class="badge ghost px-4 py-2">Ghost</span>
-                                    <span class="badge dark px-4 py-2">Dark</span>
-                                </div>
-                            </div>
+                        <div id="defense">
+                            
                         </div>
                     </div>
                 </div>
@@ -188,18 +153,12 @@
         
                 </div>
             </div>
-            <section id="color" class="py-5 text-start container banner">
+            <section id="color-footer" class="py-5 text-start container-fluid banner">
                 <div class="row justify-content-center">
                     <div class="col-8">
-                        <h1>Effects of the Psychic type</h1>
-                        <ul>
-                            <li>The power of Psychic type moves increases by 30% when Psychic Terrain is active.</li>
-                            <li>The move Miracle Eye allows Psychic type moves to hit Dark type Pokémon.</li>
-                            <li>The move Magic Powder changes the target's type to Psychic.</li>
-                            <li>The items Mind Plate, Twisted Spoon and Odd Incense increase the power of Psychic type moves by 20% when held.</li>
-                            <li>The Psychic Gem increases the power of a Psychic type move by 30% when held, and is then consumed.</li>
-                            <li>The Payapa Berry, when held, neutralizes a super-effective Psychic type move.</li>
-                            <li>Soul Dew boosts Psychic and Dragon type attacks by 20% when held by Latias or Latios.</li>
+                        <h1 id="effect-title"></h1>
+                        <ul id="effect-text">
+                            
                         </ul>
                     </div>
                 </div>
@@ -211,5 +170,6 @@
             crossorigin="anonymous"></script>
         <script type="module" src="js/pokemon_data.js"></script>
         <script type="module" src="js/type.js"></script>
+        <script type="module" src="js/type_chart.js"></script>
     </body>
 </html>

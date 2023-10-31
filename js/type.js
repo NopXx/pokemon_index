@@ -1,12 +1,19 @@
 const color = document.getElementById('color');
+const color_footer = document.getElementById('color-footer');
 const type = document.getElementById('type');
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-import {data} from './pokemon_data.js'
+import { data } from './pokemon_data.js'
+import { type_chart } from './type_chart.js'
 const type_name = urlParams.get('type-name')
 const pokemon = document.getElementById('pokemon');
 const save = document.getElementById('save-image')
 const style_image = localStorage.getItem('style-image');
+const detail = document.getElementById('detail');
+const attack = document.getElementById('attack');
+const defense = document.getElementById('defense');
+const effect_title = document.getElementById('effect-title');
+const effect_text = document.getElementById('effect-text');
 
 const capitalizeFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -57,17 +64,12 @@ var image_show = style_image == '1' ? 'image' : 'image_pix'
 
 
 
- 
-
-
-
-
-
 
 // update title
 document.title = `Pokémon | ${capitalizeFirstLetter(type_name)}`
 
 color.classList.add(type_name)
+color_footer.classList.add(type_name)
 type.innerText = capitalizeFirstLetter(type_name)
 
 const show_data = () => {
@@ -110,6 +112,105 @@ const show_data = () => {
 
 show_data()
 
+
+const type_data = type_chart.filter((res) => {
+    return res.name === type_name
+})
+
+type_data.forEach((type) => {
+    detail.innerText = type.detail
+    effect_title.innerText = `Effects of the ${capitalizeFirstLetter(type_name)} type`
+    // attack
+    if (type.attack.super['title'] != null) {
+        attack.innerHTML += `
+        <div class="my-2">
+            <p>${type.attack.super['title']}</p>
+            <div class="row">
+                <div class="col"> `
+        type.attack.super['value'].map((value) => {
+            attack.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-4 py-2">${capitalizeFirstLetter(value.name)}</span>`
+        })
+        attack.innerHTML += `
+                </div>
+            </div>
+        </div>`
+    }
+    if (type.attack.very['title'] != null) {
+        attack.innerHTML += `
+        <div class="my-2">
+            <p>${type.attack.very['title']}</p>
+            <div class="row">
+                <div class="col"> `
+        type.attack.very['value'].map((value) => {
+            attack.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-5 py-2">${capitalizeFirstLetter(value.name)}</span>`
+        })
+        attack.innerHTML += `
+                </div>
+            </div>
+        </div>`
+    }
+    if (type.attack.not['title'] != null) {
+        attack.innerHTML += `
+        <div class="my-2">
+            <p>${type.attack.not['title']}</p>
+            <div class="row">
+                <div class="col"> `
+        type.attack.not['value'].map((value) => {
+            attack.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-4 py-2">${capitalizeFirstLetter(value.name)}</span>`
+        })
+        attack.innerHTML += `
+                </div>
+            </div>
+        </div>`
+    }
+    // defense
+    if (type.defense.super['title'] != null) {
+        defense.innerHTML += `
+        <div class="my-2">
+            <p>${type.defense.super['title']}</p>
+            <div class="row">
+                <div class="col"> `
+        type.defense.super['value'].map((value) => {
+            defense.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-4 py-2">${capitalizeFirstLetter(value.name)}</span>`
+        })
+        defense.innerHTML += `
+                </div>
+            </div>
+        </div>`
+    }
+    if (type.defense.very['title'] != null) {
+        defense.innerHTML += `
+        <div class="my-2">
+            <p>${type.defense.very['title']}</p>
+            <div class="row">
+                <div class="col"> `
+        type.defense.very['value'].map((value) => {
+            defense.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-5 py-2">${capitalizeFirstLetter(value.name)}</span>`
+        })
+        defense.innerHTML += `
+                </div>
+            </div>
+        </div>`
+    }
+    if (type.defense.not['title'] != null) {
+        defense.innerHTML += `
+        <div class="my-2">
+            <p>${type.defense.not['title']}</p>
+            <div class="row">
+                <div class="col"> `
+        type.defense.not['value'].map((value) => {
+            defense.innerHTML += `<span class="badge ${value.name} mx-1 my-1 px-4 py-2">${capitalizeFirstLetter(value.name)}</span>`
+        })
+        defense.innerHTML += `
+                </div>
+            </div>
+        </div>`
+    }
+    type.effects.map((effects) => {
+        effect_text.innerHTML += `<li>${effects.text}</li>`
+    })
+
+})
 
 save.addEventListener('click', () => {
     const radio = document.querySelectorAll('input[name="toggle')
