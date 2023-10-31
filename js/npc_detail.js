@@ -36,6 +36,10 @@ const npc_id = npc.filter((data) => {
     return parseInt(data.id) === parseInt(id)
 })
 
+const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 if (id === '1') {
     nextnpc.innerHTML = `
     <div class="d-flex ml-4">
@@ -69,6 +73,7 @@ if (id === '1') {
 }
 
 npc_id.forEach((res) => {
+    document.title = `Pokémon | ${capitalizeFirstLetter(res.name)}`
     name.innerText = res.name
     age.innerText = res.age
     gender.innerText = res.gender
